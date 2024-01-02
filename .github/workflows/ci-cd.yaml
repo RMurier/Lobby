@@ -24,7 +24,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ github.repository##*/ }}:latest
+        tags: ${{ github.event.repository.name.toLowerCase() }}:latest
 
     - name: Install ArgoCD CLI
       run: |
