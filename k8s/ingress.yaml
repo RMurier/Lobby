@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lobby-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Ajoutez d'autres annotations nécessaires pour votre contrôleur Ingress spécifique
+spec:
+  rules:
+  - host: "lobby.murierromain.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lobby-service # Le nom de votre Service Kubernetes pour l'API .NET
+            port:
+              number: 80 # Le port sur lequel votre service est exposé
