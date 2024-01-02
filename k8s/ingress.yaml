@@ -17,4 +17,4 @@ spec:
           service:
             name: lobby-service # Le nom de votre Service Kubernetes pour l'API .NET
             port:
-              number: 80 # Le port sur lequel votre service est exposé
+              number: 443 # Le port sur lequel votre service est exposé
