@@ -18,5 +18,3 @@ spec:
         image: zyco/testargocd:latest
         ports:
         - containerPort: 80
-        - containerPort: 443 # Ajoutez cette ligne pour le port HTTPS
-

@@ -5,14 +5,9 @@ metadata:
   namespace: default
 spec:
   selector:
-    app: lobby
+    app: lobby # Assurez-vous que cela correspond aux sélecteurs de votre déploiement
   ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 80
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 443
-  type: ClusterIP
+  - protocol: TCP
+    port: 80 # Le port sur lequel le service sera accessible à l'intérieur du cluster
+    targetPort: 80 # Le port que votre application écoute à l'intérieur du conteneur
+  type: ClusterIP # Utilisez NodePort ou LoadBalancer si vous avez besoin d'exposer ce service en dehors du cluster
