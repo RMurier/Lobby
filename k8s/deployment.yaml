@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lobby
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lobby
+  template:
+    metadata:
+      labels:
+        app: lobby
+    spec:
+      containers:
+      - name: lobby
+        image: testargocd:latest
+        ports:
+        - containerPort: 80

@@ -32,6 +32,10 @@ jobs:
         chmod +x argocd
         sudo mv argocd /usr/local/bin/
 
+    - name: Update Kubernetes Manifests
+      run: |
+        sed -i 's|IMAGE_TAG|latest|g' k8s/deployment.yaml
+
     - name: Login to ArgoCD
       run: argocd login ${{ secrets.ARGOCD_SERVER }} --username admin --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
 
