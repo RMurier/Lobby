@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: registry.murierromain.com/zyco/${{ env.REPO_NAME }}:latest
+        tags: registry.murierromain.comfabieln/zyco/${{ env.REPO_NAME }}:latest
 
     - name: Install ArgoCD CLI
       run: |
