@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: lobby
-        image: zyco/lobby:latest
+        image: registry.murierromain.com/zyco/lobby:latest
         ports:
         - containerPort: 80
